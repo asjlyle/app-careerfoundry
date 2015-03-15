@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ h1,h2,h3,h4,h5 {
+	font-family:courier;
+
+}
+
+ .header {
+ 	text-align:center;
+ 	height:50px;
+ 	background-color:black;
+ 	color:white;
+ }
+
+ .center-div {
+ 	margin:auto;
+ 	text-align:center;
+ }

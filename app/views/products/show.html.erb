@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class="col-lg-4">
+</div>
+
+<div class="col-lg-4 product">
+  <h2><%= @product.name %></h2>
+  <%=image_tag( @product.image_url)%>
+  <p><%= @product.description %></p>
+  <p>
+	<%= link_to 'Edit', edit_product_path(@product) %> |
+	<%= link_to 'Back', products_path %>
+	</p>
+</div>
+<div class="col-lg-4">
+</div>
+
+

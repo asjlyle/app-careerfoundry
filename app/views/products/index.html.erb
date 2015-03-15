@@ -1,0 +1,21 @@
+<h1>Listing products</h1>
+
+  
+    <% @products.each do |product| %>
+      <div class="col-lg-4 product">
+        <h2><%= product.name %></h2>
+        <div>
+        <%=image_tag(product.image_url)%>
+          </div>
+        <p><%= product.description %></p>
+        <span><%= link_to 'Show', product %></span>
+        <span><%= link_to 'Edit', edit_product_path(product) %></span>
+        <span><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+      </div>
+    </div>
+    <% end %>
+  
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
