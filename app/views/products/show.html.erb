@@ -6,6 +6,7 @@
   <h2><%= @product.name %></h2>
   <%=image_tag( @product.image_url)%>
   <p><%= @product.description %></p>
+  <p><%= @product.colour %></p>
   <p>
 	<%= link_to 'Edit', edit_product_path(@product) %> |
 	<%= link_to 'Back', products_path %>
