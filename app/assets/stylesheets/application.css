@@ -19,6 +19,10 @@
 
 }
 
+body{
+	margin-top:50px;
+}
+
  .center-div {
  	margin:auto;
  	text-align:center;
