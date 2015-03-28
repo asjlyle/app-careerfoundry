@@ -19,14 +19,23 @@
 
 }
 
- .header {
- 	text-align:center;
- 	height:50px;
- 	background-color:black;
- 	color:white;
- }
-
  .center-div {
  	margin:auto;
  	text-align:center;
  }
+
+ .navbar {
+	background-color:#000;
+}
+
+
+.navbar li a {
+	text-transform:uppercase;
+	letter-spacing: 0.05em;
+	color:#fff;
+	font-weight:bold;
+
+
+.navbar img {
+	margin:20px;
+}

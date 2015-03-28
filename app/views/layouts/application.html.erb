@@ -11,9 +11,24 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-	<div class="header">
-		<h1>My Rings</h1>
-	</div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+  		<div class="container">
+      		<a class="navbar-brand" href=>
+        	<%=image_tag(Product.find(1).image_url)%>
+      		</a>
+
+      		<ul class="nav navbar-nav">
+	      		<li><%= link_to "Home", root_path %></li>
+	      		<li><%= link_to "Rings", products_path %></li>
+	      		<li><%= link_to "About", static_pages_about_path %></li>
+	      		<li><%= link_to "Contact", static_pages_contact_path %></li>
+      		</ul>
+      		<button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+      		
+    		
+  		</div>
+	</nav>
+
 	<%= yield %>
 
 	</body>
