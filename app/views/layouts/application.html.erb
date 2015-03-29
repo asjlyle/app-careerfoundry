@@ -23,14 +23,14 @@
 	      		<li><%= link_to "About", static_pages_about_path %></li>
 	      		<li><%= link_to "Contact", static_pages_contact_path %></li>
       		</ul>
-      		<form class="navbar-form navbar-left" role="search">
-	      		<%= form_tag("/products", method: "get",class:"form-group") do %>
+      		<div class="navbar-form navbar-left" role="search">
+	      		<%= form_tag(products_path, method: "get",class:"form-group") do %>
 				 <%= label_tag(:q, "Search:") %>
 				 <%= text_field_tag(:q,nil, class:"form-control") %>
 				 <%= submit_tag("Search", class:"btn btn-default") %>
 				<% end %>
 	      		<button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>     		
-    		</form>
+    		</div>
   		</div>
 	</nav>
 
