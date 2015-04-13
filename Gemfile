@@ -9,6 +9,8 @@ end
 gem 'rails', '4.1.8'
 
 gem 'devise'
+
+gem 'cancancan'
 # Use sqlite3 as the database for Active Record
 
 group :development, :test do
