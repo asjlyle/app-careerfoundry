@@ -6,6 +6,7 @@
 	  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 	  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
@@ -29,10 +30,20 @@
 				 <%= text_field_tag(:q,nil, class:"form-control") %>
 				 <%= submit_tag("Search", class:"btn btn-default") %>
 				<% end %>
-	      		<button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>     		
+				<% if user_signed_in? %>
+				  <li>
+				  <%= link_to 'Logout', destroy_user_session_path %>        
+				  </li>
+				<% else %>
+				  <li>
+				  <%= link_to('Login', new_user_session_path,class:"btn btn-default navbar-btn navbar-right")  %>
+				  </li>
+				<% end %>   		
     		</div>
   		</div>
 	</nav>
+	<p class="notice"><%=notice%></p>
+	<p class="alert"><%=alert%></p>
 
 	<%= yield %>
 
