@@ -42,8 +42,7 @@ body{
 
 .navbar img {
 	width:20px;
+	float:left;
+	display:inline;
 }
 
-.form-control {
-	width:50%;
-}

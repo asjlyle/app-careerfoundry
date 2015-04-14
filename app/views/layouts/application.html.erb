@@ -2,34 +2,45 @@
 <html>
 	<head>
 	  <title>Rings</title>
+	   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 	  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	 
 	  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-  		<div class="container">
-      		<a class="navbar-brand" href=>
-        	<%=image_tag(Product.find(1).image_url, width: '20')%>
-      		</a>
 
-      		<ul class="nav navbar-nav">
-	      		<li><%= link_to "Home", root_path %></li>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <a href="index.html" class="navbar-brand">
+        <%=image_tag(Product.find(1).image_url, width: '20')%>
+        </a>
+    <div >
+    <nav class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
+        data-target=".navbar-collapse">
+          <span = class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </nav>
+
+    <nav class="navbar-collapse collapse">
+    	<%= form_tag(products_path, method: "get",class:"navbar-form navbar-nav",role:"searchbar") do %>
+		    	<div class="form-group">
+						 <%= text_field_tag(:q,nil, class:"form-control") %>
+				</div>
+				<%= submit_tag("Search", class:"btn btn-default") %>
+		<% end %>
+      <ul class="nav navbar-nav navbar-right">
+      			<li><%= link_to "Home", root_path %></li>
 	      		<li><%= link_to "Rings", products_path %></li>
 	      		<li><%= link_to "About", static_pages_about_path %></li>
 	      		<li><%= link_to "Contact", static_pages_contact_path %></li>
-      		</ul>
-      		<div class="navbar-form navbar-left" role="search">
-	      		<%= form_tag(products_path, method: "get",class:"form-group") do %>
-				 <%= label_tag(:q, "Search:") %>
-				 <%= text_field_tag(:q,nil, class:"form-control") %>
-				 <%= submit_tag("Search", class:"btn btn-default") %>
-				<% end %>
 				<% if user_signed_in? %>
 				  <li>
 				  <%= link_to 'Logout', destroy_user_session_path %>        
@@ -39,9 +50,11 @@
 				  <%= link_to('Login', new_user_session_path,class:"btn btn-default navbar-btn navbar-right")  %>
 				  </li>
 				<% end %>   		
-    		</div>
-  		</div>
-	</nav>
+        
+        </ul>
+    </nav>
+    </div> 
+  </nav>
 	<p class="notice"><%=notice%></p>
 	<p class="alert"><%=alert%></p>
 
