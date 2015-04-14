@@ -46,3 +46,22 @@ body{
 	display:inline;
 }
 
+
+.carousel-control.left, .carousel-control.right {
+  background-image: none !important;
+  outline: 0;
+  text-shadow: none;
+  opacity: 1;
+
+ }
+.carousel .carousel-control {
+  visibility: hidden;
+}
+.carousel:hover .carousel-control {
+  visibility: visible;
+}
+
+.carousel-caption,.glyphicon {
+	color:black;
+}
+

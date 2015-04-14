@@ -2,12 +2,12 @@
 <html>
 	<head>
 	  <title>Rings</title>
-	   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	   
 	  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 	  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	 
 	  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	  <%= csrf_meta_tags %>
@@ -58,8 +58,9 @@
 	<p class="notice"><%=notice%></p>
 	<p class="alert"><%=alert%></p>
 
+	<div class="container">
 	<%= yield %>
-
+	</div>
 
 	</body>
 </html>
