@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.jsoqn
   def show
-    @comments = @product.comments.all.order("created_at DESC")
+    @comments = @product.comments.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
   end
 
   # GET /products/new
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render :new }
+        format.html { redirect_to @product, alert: 'Product was successfully created.' }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
