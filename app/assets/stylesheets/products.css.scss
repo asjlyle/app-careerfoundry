@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.product {
+.product-card {
 	text-align:center;
 }
 
-.product img {
-	height:200px
+.product-image {
+	max-height:200px
 }

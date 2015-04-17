@@ -2,15 +2,18 @@
 <div class="col-lg-4">
 </div>
 
-<div class="col-lg-4 product">
+<div class="col-lg-4">
+	<div class="product-card">
   <h2><%= @product.name %></h2>
-  <%=image_tag( @product.image_url)%>
+	<%=image_tag( @product.image_url,:class => "product-image")%>
   <p><%= @product.description %></p>
   <p><%= @product.colour %></p>
+  <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
   <p>
 	<%= link_to 'Edit', edit_product_path(@product) %> |
 	<%= link_to 'Back', products_path %>
 	</p>
+	</div>
 	<%= render partial: "new_comment" %>
 	<%= render partial: "comment" %>
 </div>
