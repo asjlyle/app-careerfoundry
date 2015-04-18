@@ -20,6 +20,10 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
+		@comment = Comment.find(params[:id])
+		@product = @comment.product
+		@comment.destroy
+		redirect_to @product,alert: 'Comment Successfully deleted'
 	end
 
 	private
