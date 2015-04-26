@@ -8,12 +8,15 @@
 	<%=image_tag( @product.image_url,:class => "product-image")%>
   <p><%= @product.description %></p>
   <p><%= @product.colour %></p>
+  <p><%= number_to_currency(@product.price,:unit=>'£') %></p>
   <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
   <p>
 	<%= link_to 'Edit', edit_product_path(@product) %> |
 	<%= link_to 'Back', products_path %>
 	</p>
 	<%= form_tag "/payments/create" do %>
+	<%= hidden_field_tag :product_id, @product.id %>
+	<%= hidden_field_tag :product_price, (@product.price*100).to_i %>
 	  <%= render partial: "shared/stripe_checkout_button" %>
 	<% end %>
 	</div>

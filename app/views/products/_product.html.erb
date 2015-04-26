@@ -5,6 +5,7 @@
         </div>
         <p><%= product.description %></p>
         <p><%= product.colour %></p>
+        <p><%= number_to_currency(@product.price,:unit=>'£') %></p>
         <span><%= link_to 'Show', product %></span>
         <span><%= link_to 'Edit', edit_product_path(product) %></span>
         <span><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></span>

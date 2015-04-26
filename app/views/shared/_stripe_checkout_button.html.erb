@@ -4,5 +4,7 @@
   data-image=<%=@product.image_url%>
   data-name=<%=@product.name%>
   data-description=<%=@product.description%>
-  data-amount="2000">
+  data-amount=<%=@product.price*100%> 
+  data-currency="gbp">
+
 </script>
