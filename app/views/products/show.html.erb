@@ -13,6 +13,9 @@
 	<%= link_to 'Edit', edit_product_path(@product) %> |
 	<%= link_to 'Back', products_path %>
 	</p>
+	<%= form_tag "/payments/create" do %>
+	  <%= render partial: "shared/stripe_checkout_button" %>
+	<% end %>
 	</div>
 	<%= render partial: "new_comment" %>
 	<%= render partial: "comment" %>
